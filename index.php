@@ -17,18 +17,16 @@
 </head>
 
 <body>
-  <?php include('nav/nav.php'); ?>
+  <?php include_once('nav/nav.php'); ?>
   <section id="page-content">
     <h2 class="overview">Overview</h2>
     <?php include('coba.php'); ?>
   </section>
   <section>
     <h2 class="overview">Data Pegawai</h2>
-    <?php include('tabel.php'); ?>
+    <?php include_once('tabel.php'); ?>
   </section>
-  <footer>
-    <span>Dinas Komunikasi dan Informatika Kota Madiun.©2023</span>
-  </footer>
+  <?php include_once('footer.php') ?>
 </body>
 
 </html>

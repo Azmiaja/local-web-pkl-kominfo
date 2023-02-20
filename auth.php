@@ -13,7 +13,7 @@ if (mysqli_num_rows($result) == 1) {
   // Jika login berhasil, redirect ke halaman home
   session_start();
   $_SESSION['username'] = $username;
-  header("Location: welcome.php");
+  header("Location: index.php");
   exit();
 } else {
   // Jika login gagal, set pesan error pada variabel session

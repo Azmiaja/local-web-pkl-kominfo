@@ -22,7 +22,7 @@ unset($_SESSION['error']);
   <?php endif; ?>
   <div class="container">
     <div class="left">
-      <img src="kominfo-seeklogo.png" alt="login-logo" />
+      <img src="img/kominfo-seeklogo.png" alt="login-logo" />
     </div>
     <div class="right">
       <div class="login">

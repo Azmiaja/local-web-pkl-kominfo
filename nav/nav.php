@@ -8,9 +8,12 @@
         <li><a class="nav-li" href="index.php">Home</a></li>
         <li><a class="nav-li" href="#">Statitics</a></li>
         <li><a class="nav-li" href="input-data.php">Insert Data</a></li>
-        <div class="con-logout">
-            <button>LOGOUT</button>
-        </div>
+        <form action="logout.php" method="post" class="con-logout">
+            <button class="btn">
+                <span class="btn-text-one">Login</span>
+                <span class="btn-text-two">Logout</span>
+            </button>
+        </form>
     </ul>
     <!-- <div class="group">
         <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
