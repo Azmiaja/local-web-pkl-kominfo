@@ -1,6 +1,6 @@
 <?php
 
-include 'koneksi.php';
+include_once('koneksi.php') ;
 
 $username = $_POST['username'];
 $password = $_POST['password'];

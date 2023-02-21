@@ -1,32 +1,28 @@
-<div class="div">
-    <table class="tabel-1" border="1px">
-        <?php
-        $sql = "SELECT COUNT(id) FROM t_pegawai";
-        $result = mysqli_query($conn, $sql);
-        ?>
-        <?php
-        if (mysqli_num_rows($result) > 0) {
-            // output data of each row
-            while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-                <tr style="height: 50px; margin: 0;">
-                    <th style="font-size: 36px;"><?php echo $row["COUNT(id)"]; ?></th>
-                    <th style="font-size: 36px;"><?php echo $row["COUNT(id)"]; ?></th>
-                    <th style="font-size: 36px;"><?php echo $row["COUNT(id)"]; ?></th>
-                </tr>
-                <tr>
-                    <th class="dt-ov">Jumlah Pegawai</th>
-                    <th class="dt-ov">Jumlah Pegawai</th>
-                    <th class="dt-ov">Jumlah Pegawai</th>
-                </tr>
-            <?php }
-        } else {
-            ?>
-            <tr>
-                <th><?php echo 00; ?></th>
-                <th>Jumlah Pegawai</th>
-            </tr>
-
-        <?php } ?>
-    </table>
+<?php
+$get1 =mysqli_query($conn, "SELECT * FROM mahasiswa");
+$coun1 = mysqli_num_rows($get1);
+$get2 =mysqli_query($conn, "SELECT * FROM mahasiswa WHERE status = 'PNS'");
+$coun2 = mysqli_num_rows($get2);
+$get3 =mysqli_query($conn, "SELECT * FROM mahasiswa WHERE pendidikan = 'S1'");
+$coun3 = mysqli_num_rows($get3);
+?>
+<div class="line-1">
+    <div class="ovw">
+        <a href="#">
+            <span class="ov-title"><?=$coun1; ?></span>
+            <span class="ov-nm">Jumlah Pegawai</span>
+        </a>
+    </div>
+    <div class="ovw">
+        <a href="#">
+            <span class="ov-title"><?=$coun2;?></span>
+            <span class="ov-nm">Jumlah PNS</span>
+        </a>
+    </div>
+    <div class="ovw">
+        <a href="#">
+            <span class="ov-title"><?=$coun3; ?></span>
+            <span class="ov-nm">Jumlah S1</span>
+        </a>
+    </div>
 </div>
