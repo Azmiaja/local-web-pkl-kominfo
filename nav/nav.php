@@ -6,7 +6,7 @@
     </div>
     <ul>
         <li><a class="nav-li" href="index.php">Home</a></li>
-        <li><a class="nav-li" href="#">Statitics</a></li>
+        <li><a class="nav-li" href="statistics.php">Statitics</a></li>
         <li><a class="nav-li" href="input-data.php">Insert Data</a></li>
         <form action="logout.php" method="post" class="con-logout">
             <button class="btn">
