@@ -1,15 +1,13 @@
 <?php
-include 'koneksi.php';
 
-//query untuk menghitung jumlah laki-laki dan perempuan
+//query data jenis kelamin mahasiswa
 $jumlah_laki = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE jenis_kelamin='Laki-laki'");
 $jumlah_perempuan = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE jenis_kelamin='Perempuan'");
 
-//simpan hasil query ke dalam variabel
 $laki_laki = mysqli_fetch_assoc($jumlah_laki)['total'];
 $perempuan = mysqli_fetch_assoc($jumlah_perempuan)['total'];
 
-//usia mahasiswa
+//query data usia mahasiswa
 $u18 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='18'");
 $u19 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='19'");
 $u20 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='20'");
@@ -28,10 +26,10 @@ $um23 = mysqli_fetch_assoc($u23)['total'];
 $um24 = mysqli_fetch_assoc($u24)['total'];
 $um25 = mysqli_fetch_assoc($u25)['total'];
 
-// Query untuk mengambil data pendidikan
+
+//query data pendidikan
 $pendidikan = mysqli_query($conn, "SELECT COUNT(*) as total, pendidikan FROM mahasiswa GROUP BY pendidikan");
 
-// Memasukkan data ke dalam variabel
 $labels = array();
 $data = array();
 
@@ -40,14 +38,20 @@ while ($row = mysqli_fetch_assoc($pendidikan)) {
     array_push($data, $row['total']);
 }
 
-// Menghitung total data
 $total = array_sum($data);
 
-// Menghitung persentase data
 $percentages = array();
 foreach ($data as $value) {
     $percentage = round(($value / $total) * 100);
     array_push($percentages, $percentage);
 }
-// Tutup koneksi ke database
+
+
+//query data status
+$status_pns = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE status='PNS'");
+$status_nonpns = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE status='NON PNS'");
+
+$pns = mysqli_fetch_assoc($status_pns)['total'];
+$non_pns = mysqli_fetch_assoc($status_nonpns)['total'];
+
 $conn->close();

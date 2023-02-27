@@ -1,23 +1,23 @@
-.container {
+.container-input {
   width: auto;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.container form {
+.container-input form {
   background-color: white;
   border-radius: 20px;
   width: 550px;
   position: relative;
   padding: 30px;
 }
-.container .input-data {
+.container-input .input-data {
   display: flex;
   padding: 7px 10px;
   justify-content: space-between;
 }
-.container .input-data .radio-button {
+.container-input .input-data .radio-button {
   width: 300px;
   height: 50px;
   display: flex;
@@ -25,7 +25,7 @@
   flex-direction: column;
   float: left;
 }
-.container .input-data #nama,
+.container-input .input-data #nama,
 #usia,
 #pendidikan,
 #tanggal-lahir,
@@ -40,26 +40,26 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-.container .input-data input:focus {
+.container-input .input-data input:focus {
   outline: none;
   background-color: #ffeaea;
 }
-.container .input-data #perempuan #laki-laki {
+.container-input .input-data #perempuan #laki-laki {
   width: 50%;
   float: left;
 }
-.container form h2 {
+.container-input form h2 {
   margin: 10px;
   margin-bottom: 20px;
 }
-.container .button {
+.container-input .button {
   margin: 10px;
   margin-top: 30px;
   width: 225px;
   display: flex;
   justify-content: space-between;
 }
-.container .button button {
+.container-input .button button {
   width: 100px;
 
   border-radius: 5px;
@@ -69,18 +69,26 @@
   color: white;
   font-weight: bold;
 }
-.container .button #submit{
+.container-input .button #submit{
   border: 2px solid #24b4fb;
   background-color: #24b4fb;
 }
 
-.container .button #submit:hover {
+.container-input .button #submit:hover {
   background-color: #0071e2;
 }
-.container .button #batal {
+.container-input .button #ubah{
+  border: 2px solid #24b4fb;
+  background-color: #24b4fb;
+}
+
+.container-input .button #ubah:hover {
+  background-color: #0071e2;
+}
+.container-input .button #batal {
     border: 2px solid #20e461;
     background-color: #20e461;
   }
-  .container .button #batal:hover {
+  .container-input .button #batal:hover {
     background-color: #15bd4d;
   }

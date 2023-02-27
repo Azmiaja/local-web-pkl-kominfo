@@ -22,6 +22,19 @@ nav {
   width: 100%;
   align-items: center;
 }
+.navbar {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-scroll {
+  background-color: #fff; /* warna background saat navbar di-scroll */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* efek bayangan saat navbar di-scroll */
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -112,63 +125,7 @@ nav ul li a {
 .btn:hover .btn-text-two {
   top: 50%;
 }
-/* .group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
-  position: relative;
-  max-width: 100vh;
-  margin-right: 100px;
-  margin-left: auto;
-}
 
-.input-sch {
-  width: 250px;
-  height: 30px;
-  line-height: 28px;
-  padding: 0 1rem;
-  padding-left: 2.5rem;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  outline: none;
-  background-color: #f3f3f4;
-  color: #0d0c22;
-  transition: 0.3s ease;
-}
-
-.input-sch::placeholder {
-  color: #9e9ea7;
-}
-
-.input-sch:focus,
-input-sch:hover {
-  outline: none;
-  border-color: rgba(234, 76, 137, 0.4);
-  background-color: #fff;
-  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-}
-
-.icon {
-  position: relative;
-  left: 2rem;
-  fill: #9e9ea7;
-  width: 1rem;
-  height: 1rem;
-} */
-
-/* .checkbtn {
-  font-size: 30px;
-  color: #505050;
-  float: right;
-  line-height: 80px;
-  margin-right: 50px;
-  margin-left: 15px;
-  cursor: pointer;
-  display: none;
-}
-#check {
-  display: none;
-} */
 
 /* styling footer */
 
@@ -333,135 +290,11 @@ footer span {
   font-size: 14px;
 }
 
-/*styling title*/
-
-
-/* styling click halaman */
-
-/* @media (max-width: 1050px) {
-  .logo {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  .group {
-    margin-right: 50px;
-  }
+/*styling bitton edit delete*/
+.bt-eddt{
+  display: flex;
+  width: 60px;
+  margin: auto;
+  justify-content: space-between;
 }
-@media (max-width: 885px) {
-  .checkbtn {
-    display: block;
-  }
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: 100%;
-    text-align: center;
-    transition: all 0.5s;
-  }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a {
-    font-size: 20px;
-    color: #d9d9d9;
-  }
-  a:hover,
-  a.active {
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul {
-    left: 0;
-  }
-}
-@media (max-width: 600px) {
-  .checkbtn {
-    display: block;
-    margin-right: 15px;
-  }
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: 100%;
-    text-align: center;
-    transition: all 0.5s;
-  }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a {
-    color: #d9d9d9;
-    font-size: 20px;
-  }
-  a:hover,
-  a.active {
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul {
-    left: 0;
-  }
-  .logo {
-    margin-right: 0;
-    margin-left: 15px;
-  }
-  .group {
-    margin-right: 10px;
-  }
-  .input-sch-sch {
-    width: 200px;
-  }
-}
-@media (max-width: 400px) {
-  .checkbtn {
-    display: block;
-    margin-right: 15px;
-  }
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: 100%;
-    text-align: center;
-    transition: all 0.5s;
-  }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a {
-    font-size: 20px;
-    color: #d9d9d9;
-  }
-  a:hover,
-  a.active {
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul {
-    left: 0;
-  }
-  .logo {
-    margin-right: 0;
-    margin-left: 15px;
-  }
-  .group {
-    margin-right: 0px;
-  }
-  .input-sch {
-    width: 200px;
-  }
-} */
+

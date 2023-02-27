@@ -1,4 +1,4 @@
-.container {
+.container-chart {
   display: flex;
   justify-content: center;
   width: auto;
@@ -6,7 +6,7 @@
   padding: 50px;
   flex-wrap: wrap;
 }
-.container .chart-1 {
+.container-chart .chart-1 {
   position: relative;
   width: 40%;
   height: 500px;
@@ -18,7 +18,7 @@
   margin: 20px;
   background-color: white;
 }
-.container .chart-1 h4 {
+.container-chart .chart-1 h4 {
   padding: 30px;
 }
 /* .container .chart-1 canvas {
