@@ -15,60 +15,64 @@ if (isset($_SESSION['success'])) {
 include '../layout/header.php';
 ?>
 
+<!-- function title -->
+<script>
+  window.addEventListener('load', function() {
+    ubahTitle('Tambah Data Baru');
+  });
+</script>
+
 <section>
   <div class="container-input">
     <form action="../config/input.php" method="post">
       <h2>Input Data Pegawai</h2>
       <div class="input-data">
         <label for="nama">Nama Lengkap</label>
-        <input type="text" name="nama" id="nama">
+        <input type="text" name="nama" id="nama" required>
       </div>
       <div class="input-data">
         <label for="jenis-kelamin">Jenis Kelamin</label>
-        <div class="radio-button">
-          <div class="laki-laki">
-            <input type="radio" name="jenis-kelamin" id="laki-laki" value="Laki - Laki" checked>
-            <label for="laki-laki">Laki - Laki</label>
-          </div>
-          <div class="perempuan">
-            <input type="radio" name="jenis-kelamin" id="perempuan" value="Perempuan">
-            <label for="perempuan">Perempuan</label>
-          </div>
-        </div>
+        <select name="jenis-kelamin" id="jenis-kelamin" required>
+          <option value="" disabled selected>-- Pilih Jenis Kelamin --</option>
+          <option value="Laki - Laki">Laki - Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
       </div>
       <div class="input-data">
         <label for="tanggal-lahir">Tanggal Lahir</label>
-        <input type="date" name="tanggal-lahir" id="tanggal-lahir" onchange="hitungUmur()">
+        <input type="date" name="tanggal-lahir" id="tanggal-lahir" required onchange="hitungUmur()" max="2005-12-31">
+
       </div>
       <div class="input-data">
         <label for="usia">Usia</label>
-        <input type="text" name="usia" id="usia">
+        <input type="number" name="usia" id="usia" min="18" max="60" required>
       </div>
       <div class="input-data">
         <label for="pendidikan">Pendidikan</label>
-        <input type="text" name="pendidikan" id="pendidikan">
+        <select name="pendidikan" id="pendidikan" required>
+          <option value="" disabled selected>-- Pilih Pendidikan --</option>
+          <option value="SMA/SMK">SMA/SMK</option>
+          <option value="D1">D1</option>
+          <option value="D2">D2</option>
+          <option value="D3">D3</option>
+          <option value="S1">S1</option>
+          <option value="S2">S2</option>
+        </select>
       </div>
       <div class="input-data">
         <label for="status">Status</label>
-        <input type="text" name="status" id="status">
+        <select name="status" id="status" required>
+          <option value="" disabled selected>-- Pilih Status --</option>
+          <option value="PNS">PNS</option>
+          <option value="NON PNS">NON PNS</option>
+          <option value="Magang">Magang</option>
+        </select>
       </div>
       <div class="button">
         <button type="submit" id="submit">Simpan</button>
         <!-- <button id="batal">Batal</button> -->
       </div>
     </form>
-    <script>
-      function hitungUmur() {
-        var tanggalLahir = new Date(document.getElementById("tanggal-lahir").value);
-        var today = new Date();
-        var age = today.getFullYear() - tanggalLahir.getFullYear();
-        var month = today.getMonth() - tanggalLahir.getMonth();
-        if (month < 0 || (month === 0 && today.getDate() < tanggalLahir.getDate())) {
-          age--;
-        }
-        document.getElementById("usia").value = age;
-      }
-    </script>
   </div>
 </section>
 

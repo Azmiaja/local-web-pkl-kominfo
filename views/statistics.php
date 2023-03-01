@@ -6,6 +6,12 @@ include('../layout/header.php');
 include('../config/data.php');
 ?>
 
+<!-- fungsi judul -->
+<script>
+  window.addEventListener('load', function() {
+    ubahTitle('Statistik Pegawai');
+  });
+</script>
 
 <section>
     <div class="container-chart">
@@ -172,6 +178,10 @@ include('../config/data.php');
                             label: 'NON-PNS',
                             data: [<?php echo $non_pns; ?>],
                             backgroundColor: '#F2E98B'
+                        },{
+                            label: 'Magang',
+                            data: [<?php echo $magang; ?>],
+                            backgroundColor: '#F2A97D'
                         }],
 
                     },
@@ -236,7 +246,7 @@ include('../config/data.php');
                 const chart3 = new Chart(ctc, {
                     type: 'pie',
                     data: {
-                        labels: ['D1', 'S1', 'S2', 'SMA'],
+                        labels: <?php echo json_encode($labels); ?>,
                         datasets: [{
                             label: 'Prosentase',
                             data: <?php echo json_encode($percentages); ?>,
@@ -244,7 +254,10 @@ include('../config/data.php');
                                 '#F7C4D0',
                                 '#B1D4B0',
                                 '#B0C4D4',
-                                '#FDE2A7'
+                                '#FDE2A7',
+                                '#F2E98B',
+                                '#B39EB5'
+
                             ],
                             hoverBorderWidth: 5,
                         }]

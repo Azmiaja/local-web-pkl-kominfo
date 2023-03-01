@@ -26,7 +26,7 @@ function input($post)
     $pendidikan = $post['pendidikan'];
     $status = $post['status'];
 
-    $query = "INSERT INTO mahasiswa (nama, jenis_kelamin, tanggal_lahir, usia, pendidikan, status)
+    $query = "INSERT INTO data_pegawai (nama, jenis_kelamin, tanggal_lahir, usia, pendidikan, status)
     VALUES ('$nama', '$jenis_kelamin', '$tanggal_lahir', '$usia', '$pendidikan', '$status')";
 
     mysqli_query($conn, $query);
@@ -34,25 +34,47 @@ function input($post)
     return mysqli_affected_rows($conn);
 }
 
-//mengedit data
-function edit($post)
-{
+
+// mengedit data
+function selectdata($id) {
     global $conn;
 
-    $id = $post['id'];
-    $nama = $post['nama'];
-    $jenis_kelamin = $post['jenis-kelamin'];
-    $tanggal_lahir = $post['tanggal-lahir'];
-    $usia = $post['usia'];
-    $pendidikan = $post['pendidikan'];
-    $status = $post['status'];
+    $query = "SELECT * FROM data_pegawai WHERE id= '$id'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+function updatedata($data) {
+    global $conn;
 
-    $query = "UPDATE mahasiswa SET nama=?, jenis_kelamin=?, tanggal_lahir=?, usia=?, pendidikan=?, status=? WHERE id=?";
+    $query = "UPDATE data_pegawai SET 
+    nama = '". $data['nama'] ."',
+    jenis_kelamin = '". $data['jenis-kelamin'] ."',
+    tanggal_lahir = '". $data['tanggal-lahir'] ."',
+    usia = '". $data['usia'] ."',
+    pendidikan = '". $data['pendidikan'] ."',
+    status = '". $data['status'] ."'
+    WHERE id= '". $data['id'] ."'";
 
-    $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, 'sssiisi', $nama, $jenis_kelamin, $tanggal_lahir, $usia, $pendidikan, $status, $id);
-    mysqli_stmt_execute($stmt);
+    $result = mysqli_query($conn, $query);
 
-    return mysqli_affected_rows($conn);
+    if (!$result) {
+        return 0;
+
+    } else {
+        return 1;
+    }
 }
 
+// menghapus data
+function delete($id){
+    global $conn;
+
+    $query = "DELETE FROM data_pegawai WHERE id= '$id'";
+    $result = mysqli_query($conn, $query);
+
+    if (!$result) {
+        return 0;
+    } else {
+        return 1;
+    }
+}

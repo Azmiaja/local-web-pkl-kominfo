@@ -1,21 +1,21 @@
 <?php
 
 //query data jenis kelamin mahasiswa
-$jumlah_laki = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE jenis_kelamin='Laki-laki'");
-$jumlah_perempuan = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE jenis_kelamin='Perempuan'");
+$jumlah_laki = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE jenis_kelamin='Laki - Laki'");
+$jumlah_perempuan = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE jenis_kelamin='Perempuan'");
 
 $laki_laki = mysqli_fetch_assoc($jumlah_laki)['total'];
 $perempuan = mysqli_fetch_assoc($jumlah_perempuan)['total'];
 
-//query data usia mahasiswa
-$u18 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='18'");
-$u19 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='19'");
-$u20 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='20'");
-$u21 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='21'");
-$u22 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='22'");
-$u23 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='23'");
-$u24 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='24'");
-$u25 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE usia='25'");
+//query data usia data_pegawai
+$u18 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='18'");
+$u19 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='19'");
+$u20 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='20'");
+$u21 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='21'");
+$u22 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='22'");
+$u23 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='23'");
+$u24 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='24'");
+$u25 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='25'");
 
 $um18 = mysqli_fetch_assoc($u18)['total'];
 $um19 = mysqli_fetch_assoc($u19)['total'];
@@ -28,7 +28,7 @@ $um25 = mysqli_fetch_assoc($u25)['total'];
 
 
 //query data pendidikan
-$pendidikan = mysqli_query($conn, "SELECT COUNT(*) as total, pendidikan FROM mahasiswa GROUP BY pendidikan");
+$pendidikan = mysqli_query($conn, "SELECT COUNT(*) as total, pendidikan FROM data_pegawai GROUP BY pendidikan");
 
 $labels = array();
 $data = array();
@@ -48,10 +48,12 @@ foreach ($data as $value) {
 
 
 //query data status
-$status_pns = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE status='PNS'");
-$status_nonpns = mysqli_query($conn, "SELECT COUNT(*) AS total FROM mahasiswa WHERE status='NON PNS'");
+$status_pns = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE status='PNS'");
+$status_nonpns = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE status='NON PNS'");
+$status_magang = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE status='Magang'");
 
 $pns = mysqli_fetch_assoc($status_pns)['total'];
 $non_pns = mysqli_fetch_assoc($status_nonpns)['total'];
+$magang = mysqli_fetch_assoc($status_magang)['total'];
 
 $conn->close();
