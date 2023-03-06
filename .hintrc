@@ -8,7 +8,13 @@
       "default",
       {
         "ignore": [
-          "-webkit-overflow-scrolling"
+          "-webkit-overflow-scrolling",
+          "width: fit-content",
+          "aspect-ratio",
+          "rotate",
+          "scroll-behavior",
+          "overscroll-behavior-x",
+          "scrollbar-width"
         ]
       }
     ]

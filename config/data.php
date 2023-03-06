@@ -16,6 +16,8 @@ $u22 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usi
 $u23 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='23'");
 $u24 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='24'");
 $u25 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='25'");
+$u28 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='28'");
+$u37 = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='37'");
 
 $um18 = mysqli_fetch_assoc($u18)['total'];
 $um19 = mysqli_fetch_assoc($u19)['total'];
@@ -25,6 +27,8 @@ $um22 = mysqli_fetch_assoc($u22)['total'];
 $um23 = mysqli_fetch_assoc($u23)['total'];
 $um24 = mysqli_fetch_assoc($u24)['total'];
 $um25 = mysqli_fetch_assoc($u25)['total'];
+$um28 = mysqli_fetch_assoc($u28)['total'];
+$um37 = mysqli_fetch_assoc($u37)['total'];
 
 
 //query data pendidikan
@@ -55,5 +59,20 @@ $status_magang = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai
 $pns = mysqli_fetch_assoc($status_pns)['total'];
 $non_pns = mysqli_fetch_assoc($status_nonpns)['total'];
 $magang = mysqli_fetch_assoc($status_magang)['total'];
+
+//prosentase usia
+$total_pegawai = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai");
+$result = mysqli_fetch_assoc($total_pegawai);
+$total = $result['total'];
+
+$usia = array(); // inisialisasi array usia
+for($i = 18; $i <= 25; $i++) {
+  $query = mysqli_query($conn, "SELECT COUNT(*) AS total FROM data_pegawai WHERE usia='$i'");
+  $result = mysqli_fetch_assoc($query);
+  $usia[$i] = number_format(($result['total']/$total)*100, 2); // menghitung prosentase dan menyimpan ke dalam array usia dengan format 1 digit di belakang koma
+}
+
+
+
 
 $conn->close();
