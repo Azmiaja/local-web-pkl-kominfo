@@ -10,10 +10,7 @@ $(document).ready(function () {
         ],
         pageLength: 10,
         searching: true,
-
     });
-
-
 });
 
 //delete data

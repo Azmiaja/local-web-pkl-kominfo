@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="../css/style-chart.css" />
     <link rel="stylesheet" href="../css/style-statistik.css" />
     <link rel="stylesheet" href="../fontawesome-free-6.3.0-web/css/all.min.css">
-    <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/2867685f35.css" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/2867685f35.js" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

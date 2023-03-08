@@ -30,19 +30,19 @@ include '../config/data.php';
 
         <div class="row-chart">
             <div class="title-chart">
-                <h1>Jumlah <span>Mahasiswa</span> Berdasarkan Jenis Kelamin</h1>
+                <h1>Jumlah <span>Pegawai</span> Berdasarkan Jenis Kelamin</h1>
             </div>
             <div class="chart-usia">
                 <canvas id="usia-3"></canvas>
             </div>
             <div class="title-chart">
-                <h1>Jumlah <span>Mahasiswa</span> Berdasarkan Usia</h1>
+                <h1>Jumlah <span>Pegawai</span> Berdasarkan Usia</h1>
             </div>
             <div class="chart-usia">
                 <canvas id="usia-1"></canvas>
             </div>
             <div class="title-chart">
-                <h1>Prosentase Usia <span>Mahasiswa</span></h1>
+                <h1>Prosentase Usia <span>Pegawai</span></h1>
             </div>
             <div class="chart-usia">
                 <canvas id="usia-2"></canvas>
@@ -81,7 +81,7 @@ include '../config/data.php';
             plugins: {
                 title: {
                     display: false,
-                    text: 'Grafik Jumlah Mahasiswa Laki - Laki dan Perempuan',
+                    text: 'Grafik Jumlah Pegawai Laki - Laki dan Perempuan',
                     color: '#1e1e1e',
                     font: {
                         size: 16
@@ -109,7 +109,7 @@ include '../config/data.php';
                 y: {
                     title: {
                         display: true,
-                        text: 'Jumlah Mahasiswa',
+                        text: 'Jumlah Pegawai',
                         font: {
                             size: 20
                         }
@@ -177,7 +177,7 @@ include '../config/data.php';
             plugins: {
                 title: {
                     display: false,
-                    text: 'Grafik Usia Mahasiswa',
+                    text: 'Grafik Usia Pegawai',
                     color: '#1e1e1e',
                     font: {
                         size: 30
@@ -204,7 +204,7 @@ include '../config/data.php';
                 y: {
                     title: {
                         display: true,
-                        text: 'Jumlah Mahasiswa',
+                        text: 'Jumlah Pegawai',
                         font: {
                             size: 20
                         }
@@ -213,7 +213,7 @@ include '../config/data.php';
                 x: {
                     title: {
                         display: true,
-                        text: 'Usia Mahasiswa',
+                        text: 'Usia Pegawai',
                         font: {
                             size: 20
                         }
@@ -261,7 +261,7 @@ include '../config/data.php';
             plugins: {
                 title: {
                     display: false,
-                    text: 'Prosentase Usia Mahasiswa',
+                    text: 'Prosentase Usia Pegawai',
                     color: '#1e1e1e',
                     font: {
                         size: 30

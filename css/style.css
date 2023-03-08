@@ -11,7 +11,7 @@ body {
   /* background-image: url(../img/Desktop\ -\ 1.png); */
   /* background-repeat: no-repeat;
     background-size: cover; */
-    font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .container {
@@ -87,8 +87,8 @@ header.active {
   color: #2f7bee;
   transition: 0.3s;
 }
-.navbar .menu li .dropdown a i{
-  font-size: .9em;
+.navbar .menu li .dropdown a i {
+  font-size: 0.9em;
   padding: 0 4px;
   /* transition: transform 0.3s ease-in-out; */
 }
@@ -139,25 +139,25 @@ header.active {
   margin-right: 100px;
 }
 .btn {
-  width: 80px;
-  height: 35px;
+  width: 80PX;
+  height: 36px;
   background: #2f7bee;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 5px;
   border: none;
   outline: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .btn span {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 14px;
+  /* text-transform: uppercase; */
+  /* font-weight: 700; */
+  /* letter-spacing: 1px; */
   transition: top 0.5s;
 }
 
@@ -202,164 +202,264 @@ footer span {
   color: #828282;
   font-size: 12px;
 }
+
+/* ========================================== */
 /* styling overview */
-.container .page-title{
+.container .page-title {
   /* border: 1px solid black; */
   width: 100% auto;
   padding: 20px 0;
-  background-color: #95BDFF;
+  background-color: #95bdff;
 }
 .overview {
   color: #fffafa;
- margin: 20px 36px ;
- text-align: center;
+  margin: 20px 36px;
+  text-align: center;
   font-weight: bold;
   font-size: 3em;
-  text-shadow: 2px 2px 0 rgb(82, 94, 117, 0.5);
-
+  text-shadow: 2px 2px 0 rgba(82, 94, 117, 0.5);
 }
 
-.line-1 {
+section .container-ov {
+  height: 100vh;
+  position: relative;
+}
+
+.container-card {
   width: auto;
-  height: auto;
+  height: 60%;
   display: flex;
-  margin: 25px 36px;
-  align-items: center;
   justify-content: space-between;
-  /* display: grid;
-  grid-auto-flow: column;
-  scroll-behavior: auto;
-  gap: 1.2em;
-  overflow-y: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none; */
+  margin: 36px;
 }
-.ovw {
+
+/* ====== CARD SATU ====== */
+.card-1 {
+  width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  width: 30%;
+  /* align-items: center; */
+  /* justify-content: center; */
   border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  /* border-bottom: 1px solid #828282;
-  border-top: 1px solid #828282; */
+  background-color: #f4efd3;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
 }
-.ovw a {
+
+.card-1 .in-card-1 {
+  /* border: 1px solid black; */
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c2b0c9;
+  border-radius: 10px 10px 0 0;
+  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); */
+}
+.in-card-1 .circle {
+  height: 100px;
+  aspect-ratio: 1;
+  /* border: 1px solid black; */
+  /* border-radius: 100px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #72a4f3; */
+  /* box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3); */
+}
+.in-card-1 .circle i {
+  font-size: 4em;
+  color: #9656a1;
+}
+
+.in-2-card-1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  /* border: 1px solid black; */
+  flex-direction: column;
+}
+.in-2-card-1 .ovw-1 {
+  width: 60%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* border: 3px solid black; */
+  margin: 10px;
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5); */
 }
-.tabel-1 {
+.in-2-card-1 .ovw-2 {
+  display: flex;
   width: 100%;
-  height: 85px;
-  border-top: 1px solid #828282;
-  border-bottom: 1px solid #828282;
-  background-color: white;
-  margin-right: 36px;
-  margin-left: 36px;
+  height: 30%;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+.ovw-2 .view-jk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid black; */
+  width: 100%;
+  justify-content: center;
+}
+.view-jk .jml {
+  font-size: 2em;
+  font-weight: bold;
+  color: #9656a1;
+}
+.view-jk .jk {
+  font-size: 1.3em;
+  color: #c2b0c9;
 }
 .ov-title {
-  font-size: 36px;
+  font-size: 4em;
   font-weight: bold;
-  color: #252525;
+  color: #9656a1;
 }
 .ov-nm {
   font-weight: 500;
-  font-size: 15px;
+  font-size: 1.5em;
   line-height: 18px;
-  color: #252525;
+  color: #c2b0c9;
 }
+.bt-card-1 {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+  border-radius: 0 0 10px 10px;
+  /* background-color: #f6f578; */
+}
+.bt-card-1 button {
+  padding: 8px 25px;
+  background-color: transparent;
+  color: #c2b0c9;
+  border: 2px solid #c2b0c9;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+}
+.bt-card-1 button:hover {
+  color: #9656a1;
+  box-shadow: inset 0 -100px 0 0 #c2b0c9;
+}
+.bt-card-1 button:active {
+  transform: scale(0.9);
+}
+/* ======  CARD SATU  ====== */
 
-/* styling hetabel */
-.div-tabel {
-  width: auto;
-  height: auto;
-  position: relative;
+/* ====== CONTAINER CARD DUA TIGA ====== */
+.card-2-3 {
+  /* border: 1px solid black; */
+  width: 350px;
   display: flex;
   flex-direction: column;
-  margin-top: 19px;
-  margin-right: 36px;
-  margin-left: 36px;
-  background-color: white;
-  border-bottom: 1px solid #828282;
-  border-top: 1px solid #828282;
 }
-.data {
-  width: auto;
-  margin-right: 18px;
-  margin-left: 18px;
-  margin-top: 12px;
-}
-.div-sh {
+
+/* ====== CARD DUA ====== */
+.card-2 {
   display: flex;
-  justify-content: space-between;
-  margin-top: 18px;
-  margin-left: 18px;
-  margin-right: 18px;
+  /* flex-direction: column; */
+  align-items: center;
+  /* justify-content: center; */
+  flex: 1 1 auto;
+  height: 48%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: #f4efd3;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
 }
-.div-sh input {
-  width: 40px;
-}
-.div-sh button {
-  background-color: #4caf50;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.div-sh button:hover {
-  background-color: #3a943d;
-}
-.div-page {
+.card-2 .tag-pg {
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 100px;
+  border-radius: 10px 0 0 10px;
   display: flex;
-  margin-top: 18px;
-  margin-left: 18px;
-  margin-right: 18px;
-  margin-bottom: 18px;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2b0c9;
 }
-.div-page button {
-  background-color: #ffffff;
-  border: 1px solid #828282;
-  color: #828282;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-  width: 45px;
+.tag-pg i {
+  font-size: 2.5em;
+  color: #9656a1;
 }
-.div-page button:hover {
-  background-color: #bbbbbb;
-  color: white;
+.card-2 .tag-num {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 250px;
+  align-items: center;
 }
-#prevBtn {
-  border-radius: 5px 0px 0px 5px;
+.ov-title-1 {
+  color: #9656a1;
+  font-size: 3.2em;
+  font-weight: bold;
 }
-#nextBtn {
-  border-radius: 0px 5px 5px 0px;
+.ov-nm-1 {
+  color: #c2b0c9;
+  font-size: 1.2em;
 }
-.page-number {
-  padding: 5px 10px;
-  text-align: center;
-  background-color: #1967dd;
-  border-bottom: 1px solid #828282;
-  border-top: 1px solid #828282;
-  color: white;
-  font-size: 14px;
+/* ====== CARD DUA ====== */
+
+/* ====== CARD TIGA ====== */
+.card-3 {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* justify-content: center; */
+  flex: 1 1 auto;
+  height: 48%;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: #f4efd3;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
 }
+.card-3 .tag-pg-2 {
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 100px;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2b0c9;
+}
+.tag-pg-2 i {
+  font-size: 2.5em;
+  color: #9656a1;
+}
+.card-3 .tag-num-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 250px;
+  align-items: center;
+}
+.ov-title-2 {
+  color: #9656a1;
+  font-size: 3.2em;
+  font-weight: bold;
+}
+.ov-nm-2 {
+  color: #c2b0c9;
+  font-size: 1.2em;
+}
+/* ====== CARD TIGA ====== */
+
+
 
 /*styling bitton edit delete*/
 .bt-eddt {
@@ -368,12 +468,11 @@ footer span {
   margin: auto;
   justify-content: space-between;
 }
-.bt-eddt a i{
+.bt-eddt a i {
   font-size: 1.2em;
-  color: #525E75;
-  
+  color: #525e75;
 }
-.bt-eddt a i:hover{
-  color: #95BDFF;
-  transition: .3s;
+.bt-eddt a i:hover {
+  color: #95bdff;
+  transition: 0.3s;
 }

@@ -21,27 +21,103 @@ $data_pegawai = select("SELECT * FROM data_pegawai")
   <!-- overview -->
   <div class="container">
     <section>
-      <div class="page-title">
-        <h2 class="overview">Overview</h2>
-      </div>
-      <div class="line-1">
-        <div class="ovw">
-          <a href="#">
-            <span class="ov-title"><?= $coun1; ?></span>
-            <span class="ov-nm">Jumlah Pegawai</span>
-          </a>
+      <div class="container-ov">
+        <div class="page-title">
+          <h2 class="overview">Overview</h2>
         </div>
-        <div class="ovw">
-          <a href="#">
-            <span class="ov-title"><?= $coun2; ?></span>
-            <span class="ov-nm">Jumlah PNS</span>
-          </a>
-        </div>
-        <div class="ovw">
-          <a href="#">
-            <span class="ov-title"><?= $coun3; ?></span>
-            <span class="ov-nm">Jumlah S1</span>
-          </a>
+        <div class="container-card">
+          <!-- CARD SATU -->
+          <div class="card-1 ovw">
+            <div class="in-card-1">
+              <div class="circle">
+                <i class="fa-solid fa-users"></i>
+              </div>
+            </div>
+            <div class="in-2-card-1">
+              <div class="ovw-1">
+                <span class="ov-title"><?= $total; ?></span>
+                <span class="ov-nm">Jumlah Pegawai</span>
+              </div>
+              <div class="ovw-2">
+                <div class="view-jk">
+                  <span class="jml"><?= $jk_laki; ?></span>
+                  <span class="jk">Laki - Laki</span>
+                </div>
+                <div class="view-jk">
+                  <span class="jml"><?= $jk_p; ?></span>
+                  <span class="jk">Permpuan</span>
+                </div>
+              </div>
+            </div>
+            <div class="bt-card-1">
+              <a href="./statistik-usia.php">
+                <button>View</button>
+              </a>
+            </div>
+          </div>
+          <!-- CARD DUA DAN TIGA -->
+          <div class="card-2-3">
+            <div class="card-2 ovw">
+              <div class="tag-pg">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <div class="tag-num">
+                <span class="ov-title-1"><?= $pns; ?></span>
+                <span class="ov-nm-1">Jumlah PNS</span>
+              </div>
+            </div>
+            <div class="card-3 ovw">
+              <div class="tag-num-2">
+                <span class="ov-title-2"><?= $d3; ?></span>
+                <span class="ov-nm-2">Jumlah D3</span>
+              </div>
+              <div class="tag-pg-2">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+            </div>
+          </div>
+          <!-- CARD DUA DAN TIGA -->
+          <div class="card-2-3">
+            <div class="card-2 ovw">
+              <div class="tag-pg">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="tag-num">
+                <span class="ov-title-1"><?= $nopns; ?></span>
+                <span class="ov-nm-1">Jumlah NON-PNS</span>
+              </div>
+            </div>
+            <div class="card-3 ovw">
+              <div class="tag-num-2">
+                <span class="ov-title-2"><?= $s1; ?></span>
+                <span class="ov-nm-2">Jumlah S1</span>
+              </div>
+              <div class="tag-pg-2">
+                <i class="fa-solid fa-book"></i>
+              </div>
+            </div>
+          </div>
+          <!-- CARD DUA DAN TIGA -->
+          <div class="card-2-3">
+            <div class="card-2 ovw">
+              <div class="tag-pg">
+                <i class="fa-solid fa-paperclip"></i>
+              </div>
+              <div class="tag-num">
+                <span class="ov-title-1"><?= $magang; ?></span>
+                <span class="ov-nm-1">Jumlah Magang</span>
+              </div>
+            </div>
+            <div class="card-3 ovw">
+              <div class="tag-num-2">
+                <span class="ov-title-2"><?= $s2; ?></span>
+                <span class="ov-nm-2">Jumlah S2</span>
+              </div>
+              <div class="tag-pg-2">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -93,10 +169,10 @@ $data_pegawai = select("SELECT * FROM data_pegawai")
             <tr>
               <th>No.</th>
               <th>Nama</th>
-              <th>Usia</th>
               <th>Jenis Kelamin</th>
+              <th>Tanggal Lahir</th>
+              <th>Usia</th>
               <th>Pendidikan</th>
-              <th>Jabatan</th>
               <th>Status</th>
               <th>Action</th>
             </tr>

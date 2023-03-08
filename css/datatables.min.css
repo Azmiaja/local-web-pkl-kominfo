@@ -313,11 +313,11 @@ table.dataTable td {
 .dataTables_wrapper {
   position: relative;
   clear: both;
-  background-color: white;
-  margin: 18px 36px 18px 36px;
+  background-color: #fff;
+  margin: 36px 36px;
   border-radius: 15px;
   /* border-top: 1px solid #828282; */
-  box-shadow:  0 0 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow:  0 0 5px rgba(0, 0, 0, 0.2); */
 }
 .dataTables_wrapper .dataTables_length {
   float: left;
