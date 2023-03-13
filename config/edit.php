@@ -4,10 +4,9 @@ include './app.php';
 $id = $_POST['id'];
 $nama = $_POST['nama'];
 $jenis_kelamin = $_POST['jenis-kelamin'];
-$tanggal_lahir = $_POST['tanggal-lahir'];
-$usia = $_POST['usia'];
-$pendidikan = $_POST['pendidikan'];
 $status = $_POST['status'];
+$pendidikan = $_POST['pendidikan'];
+
 
 // if (isset($_POST['ubah'])) {
 //   session_start();
@@ -27,10 +26,9 @@ $dataArr = array(
   'id' => $id,
   'nama' => $nama,
   'jenis-kelamin' => $jenis_kelamin,
-  'tanggal-lahir' => $tanggal_lahir,
-  'usia' => $usia,
-  'pendidikan' => $pendidikan,
-  'status' => $status
+  'status' => $status,
+  'pendidikan' => $pendidikan
+
 );
 
 if (updatedata($dataArr) == 1) {

@@ -8,303 +8,587 @@ include('../config/data.php');
 
 <!-- fungsi judul -->
 <script>
-  window.addEventListener('load', function() {
-    ubahTitle('Statistik Pegawai');
-  });
+    window.addEventListener('load', function() {
+        ubahTitle('Statistik Karyawan');
+    });
 </script>
 
-<section>
-    <div class="container-chart">
 
-        <div class="chart-1">
-            <canvas id="chart"></canvas>
-            <script>
-                const ctx = document.getElementById('chart').getContext('2d');
-                const chart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Laki-Laki', 'Perempuan'],
-                        datasets: [{
-                            label: 'Jumlah',
-                            data: [<?php echo $laki_laki; ?>, <?php echo $perempuan; ?>],
-                            backgroundColor: [
-                                '#AEC8CA',
-                                '#F4AEC5'
-                            ],
-                            hoverBorderWidth: 5,
-                        }],
-                    },
-                    options: {
-                        aspectRatio: 1 | 1,
-                        layout: {
-                            padding: 50
-                        },
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Grafik Jumlah Mahasiswa Laki - Laki dan Perempuan',
-                                color: '#1e1e1e',
-                                font: {
-                                    size: 16
-                                },
-                                padding: {
-                                    bottom: 20,
-                                }
-                            },
-                            legend: {
-                                position: 'bottom',
-                                display: true,
-                                labels: {
-                                    color: '#1e1e1e',
-                                    usePointStyle: true,
-                                    padding: 20
-                                },
-                            },
+<main>
+    <div class="title">
+        <h1>Statistik Karyawan</h1>
+        <ul>
+            <li>
+                <a href="../views/home.php">Beranda
+                    <i class="fa-solid fa-angle-left"></i>
+                </a>
+            </li>
+            <li>
+                <a href="../views/statistik-usia.php">Statistik Karyawan</a>
+            </li>
+        </ul>
+    </div>
+    <section>
+        <div class="container-chart">
+            <div class="box-chart">
+                <div class="title-chart">
+                    <h1>Grafik Karyawan Berdasarkan <span>Jenis Kelamin</span></h1>
+                </div>
+                <div class="box-row">
+                    <div class="chart chart-1" style="display: none;">
+                        <canvas id="jk1"></canvas>
+                    </div>
+                    <div class="chart chart-2">
+                        <canvas id="jk"></canvas>
+                    </div>
+                    <div class="ct-persen">
+                        <button>
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-chart">
+                <div class="title-chart">
+                    <h1>Grafik <span>Status</span> Karyawan</h1>
+                </div>
+                <div class="box-row">
+                    <div class="chart chart-1" style="display: none;">
+                        <canvas id="st1"></canvas>
+                    </div>
+                    <div class="chart chart-2">
+                        <canvas id="st"></canvas>
+                    </div>
+                    <div class="ct-persen">
+                        <button id="persen">
+                            <i class="fa-solid fa-chart-pie">
+                            </i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-chart">
+                <div class="title-chart">
+                    <h1>Grafik <span>Pendidikan</span> Karyawan</h1>
+                </div>
+                <div class="box-row">
+                    <div class="chart chart-1" style="display: none;">
+                        <canvas id="pen1"></canvas>
+                    </div>
+                    <div class="chart chart-2">
+                        <canvas id="pen"></canvas>
+                    </div>
+                    <div class="ct-persen">
+                        <button><i class="fa-solid fa-chart-pie"></i></button>
+                    </div>
+                </div>
+            </div>
 
-                        },
-                        maintainAspectRatio: false,
-                    }
-                });
-            </script>
         </div>
-        <div class="chart-1">
-            <canvas id="chart2"></canvas>
-            <script>
-                const ctt = document.getElementById('chart2').getContext('2d');
-                const chart2 = new Chart(ctt, {
-                    type: 'bar',
-                    data: {
-                        labels: [''],
-                        datasets: [{
-                            label: 'Usia 18',
-                            data: [<?php echo $um18; ?>],
-                            backgroundColor: '#7F7FBB'
-                        }, {
-                            label: 'Usia 19',
-                            data: [<?php echo $um19; ?>],
-                            backgroundColor: '#D46A6A'
-                        }, {
-                            label: 'Usia 20',
-                            data: [<?php echo $um20; ?>],
-                            backgroundColor: '#6CA69E'
-                        }, {
-                            label: 'Usia 21',
-                            data: [<?php echo $um21; ?>],
-                            backgroundColor: '#F2E98B'
-                        }, {
-                            label: 'Usia 22',
-                            data: [<?php echo $um22; ?>],
-                            backgroundColor: '#B39EB5'
-                        }, {
-                            label: 'Usia 23',
-                            data: [<?php echo $um23; ?>],
-                            backgroundColor: '#F7A16C'
-                        }, {
-                            label: 'Usia 24',
-                            data: [<?php echo $um24; ?>],
-                            backgroundColor: '#BDBDBD'
-                        }, {
-                            label: 'Usia 25',
-                            data: [<?php echo $um25; ?>],
-                            backgroundColor: '#FF6961'
-                        }],
-                    },
-                    options: {
-                        barThickness: 30,
-                        maxBarThickness: 20,
-                        height: 400,
-                        layout: {
-                            padding: {
-                                top: 50,
-                                bottom: 50,
-                                right: 100,
-                                left: 100
-                            }
-                        },
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Grafik Usia Mahasiswa',
-                                color: '#1e1e1e',
-                                font: {
-                                    size: 16
-                                },
-                                padding: {
-                                    bottom: 20
-                                }
-                            },
-                            legend: {
-                                display: true,
-                                position: 'bottom',
-                                labels: {
-                                    color: '#1e1e1e',
-                                    usePointStyle: true,
-                                    padding: 20
-                                },
-                            },
-                        },
-                        scales: {
-                            y: {
-                                title: {
-                                    display: true,
-                                    text: 'Jumlah Mahasiswa',
-                                },
-                            },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Usia Mahasiswa',
-                                },
-                            }
-                        },
-                        maintainAspectRatio: false
-                    }
-                });
-            </script>
-        </div>
-        <div class="chart-1">
-            <canvas id="chart4"></canvas>
-            <script>
-                const cat = document.getElementById('chart4').getContext('2d');
-                const chart4 = new Chart(cat, {
-                    type: 'bar',
-                    data: {
-                        labels: [''],
-                        datasets: [{
-                            label: 'PNS',
-                            data: [<?php echo $pns; ?>],
-                            backgroundColor: '#B39EB5'
-                        }, {
-                            label: 'NON-PNS',
-                            data: [<?php echo $non_pns; ?>],
-                            backgroundColor: '#F2E98B'
-                        },{
-                            label: 'Magang',
-                            data: [<?php echo $magang; ?>],
-                            backgroundColor: '#F2A97D'
-                        }],
+    </section>
+</main>
+<script>
+    // chart 1
+    // chart bar jenis kelamin //BAR
+    const ctxr = document.getElementById('jk').getContext('2d');
+    const jk = new Chart(ctxr, {
+        type: 'bar',
+        data: {
+            labels: ['Jenis Kelamin'],
+            datasets: [{
+                label: 'Laki-laki',
+                data: [<?php echo $laki_laki; ?>],
+                backgroundColor: '#95ceff'
+            }, {
+                label: 'Perempuan',
+                data: [<?php echo $perempuan; ?>],
+                backgroundColor: '#5c5c61'
+            }],
+        },
+        options: {
+            categoryPercentage: 0.5,
+            layout: {
+                padding: {
+                    top: 50,
+                    bottom: 10,
+                    right: 50,
+                    left: 50
+                }
+            },
 
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    display: true,
+                    labels: {
+                        color: '#1e1e1e',
+                        usePointStyle: true,
+                        padding: 20,
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        }
                     },
-                    options: {
-                        barThickness: 50,
-                        // barPercentage: 0.2,
-                        maxBarThickness: 40,
-                        height: 400,
-                        layout: {
-                            padding: {
-                                top: 50,
-                                bottom: 50,
-                                right: 130,
-                                left: 130
-                            }
-                        },
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Status Pegawai',
-                                color: '#1e1e1e',
-                                font: {
-                                    size: 16
-                                },
-                                padding: {
-                                    bottom: 20
-                                }
-                            },
-                            legend: {
-                                display: true,
-                                position: 'bottom',
-                                labels: {
-                                    color: '#1e1e1e',
-                                    usePointStyle: true,
-                                    padding: 20
-                                },
-                            },
-                        },
-                        scales: {
-                            y: {
-                                title: {
-                                    display: true,
-                                    text: 'Jumlah Mahasiswa',
-                                },
-                            },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Status',
-                                },
-                            }
-                        },
-                        maintainAspectRatio: false
-                    }
-                })
-            </script>
-        </div>
-        <div class="chart-1">
-            <canvas id="chart3"></canvas>
-            <script>
-                const ctc = document.getElementById('chart3').getContext('2d');
-                const chart3 = new Chart(ctc, {
-                    type: 'pie',
-                    data: {
-                        labels: <?php echo json_encode($labels); ?>,
-                        datasets: [{
-                            label: 'Prosentase',
-                            data: <?php echo json_encode($percentages); ?>,
-                            backgroundColor: [
-                                '#F7C4D0',
-                                '#B1D4B0',
-                                '#B0C4D4',
-                                '#FDE2A7',
-                                '#F2E98B',
-                                '#B39EB5'
-
-                            ],
-                            hoverBorderWidth: 5,
-                        }]
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgb(248, 248, 242, .6)',
+                    borderColor: '#DFD3C3',
+                    borderWidth: 1.5,
+                    bodyFont: {
+                        size: 14,
                     },
-                    options: {
-                        aspectRatio: 1 | 1,
-                        maintainAspectRatio: false,
-                        layout: {
-                            padding: 50
-                        },
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Prosentase Pendidikan Mahasiswa',
-                                color: '#1e1e1e',
-                                font: {
-                                    size: 16
-                                },
-                                padding: {
-                                    bottom: 20,
-                                }
-                            },
-                            legend: {
-                                position: 'bottom',
-                                display: true,
-                                labels: {
-                                    color: '#1e1e1e',
-                                    usePointStyle: true,
-                                    padding: 20
-                                },
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        return 'Prosentase' + ': ' + context.parsed + '%';
-                                    }
-                                }
-                            }
+                    bodyColor: '#1e1e1e',
+                    cornerRadius: 3,
+                    yAlign: 'bottom',
+                    titleColor: '#1e1e1e',
+                    titleFont: {
+                        size: 14,
+                    },
+                    padding: 10,
+                    caretPadding: 8,
+                },
 
+            },
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Jumlah Karyawan',
+                        font: {
+                            size: 16
+                        }
+                    },
+                },
+                x: {
+                    title: {
+                        display: false,
+                        text: 'Jenis Kelamin',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    ticks: {
+                        padding: 5,
+                        font: {
+                            size: 16
                         }
                     }
-                });
-            </script>
-        </div>
+                },
+            },
+            maintainAspectRatio: false,
+        }
+    });
 
-    </div>
+    // PIE
+    const ctx = document.getElementById('jk1').getContext('2d');
+    const jk1 = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Laki-laki', 'Perempuan'],
+            datasets: [{
+                label: ['Prosentase'],
+                data: [<?php echo $persen_laki_laki; ?>, <?php echo $persen_perempuan; ?>],
+                backgroundColor: ['#95ceff', '#5c5c61']
+            }],
+        },
+        options: {
+            // categoryPercentage: 0.5,
+            layout: {
+                padding: {
+                    top: 50,
+                    bottom: 10,
+                    right: 50,
+                    left: 50
+                }
+            },
 
-</section>
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    display: true,
+                    labels: {
+                        color: '#1e1e1e',
+                        usePointStyle: true,
+                        padding: 20,
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgb(248, 248, 242, .6)',
+                    borderColor: '#DFD3C3',
+                    borderWidth: 1.5,
+                    bodyFont: {
+                        size: 14,
+                    },
+                    bodyColor: '#1e1e1e',
+                    cornerRadius: 3,
+                    yAlign: 'bottom',
+                    titleColor: '#1e1e1e',
+                    titleFont: {
+                        size: 14,
+                    },
+                    padding: 10,
+                    caretPadding: 8,
+                    caretSize: 0,
+                    callbacks: {
+                        label: function(context) {
+                            return 'Prosentase' + ': ' + context.parsed + '%';
+                        }
+                    }
+                },
+            },
+            maintainAspectRatio: false,
+        }
+    });
+</script>
+<script>
+    //chart 2
+    const st = document.getElementById('st').getContext('2d');
+    const status = new Chart(st, {
+        type: 'bar',
+        data: {
+            labels: ['Status'],
+            datasets: [{
+                label: 'ASN',
+                data: [<?php echo $asn; ?>],
+                backgroundColor: '#90ed7d',
+            }, {
+                label: 'NON ASN',
+                data: [<?php echo $nonasn; ?>],
+                backgroundColor: '#2b908f',
+            }],
+
+        },
+        options: {
+            categoryPercentage: 0.5,
+            layout: {
+                padding: {
+                    top: 50,
+                    bottom: 10,
+                    right: 50,
+                    left: 50
+                }
+            },
+
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    display: true,
+                    labels: {
+                        color: '#1e1e1e',
+                        usePointStyle: true,
+                        padding: 20,
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgb(248, 248, 242, .6)',
+                    borderColor: '#DFD3C3',
+                    borderWidth: 1.5,
+                    bodyFont: {
+                        size: 14,
+                    },
+                    bodyColor: '#1e1e1e',
+                    cornerRadius: 3,
+                    yAlign: 'bottom',
+                    titleColor: '#1e1e1e',
+                    titleFont: {
+                        size: 14,
+                    },
+                    padding: 10,
+                    caretPadding: 8,
+                },
+
+            },
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Jumlah Karyawan',
+                        font: {
+                            size: 16
+                        }
+                    },
+                },
+                x: {
+                    title: {
+                        display: false,
+                        text: 'Jenis Kelamin',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    ticks: {
+                        padding: 5,
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+            },
+            maintainAspectRatio: false,
+        }
+    });
+
+    // PIE
+    const st1 = document.getElementById('st1').getContext('2d');
+    const status1 = new Chart(st1, {
+        type: 'pie',
+        data: {
+            labels: ['ASN', 'NON ASN'],
+            datasets: [{
+                label: ['Prosentase'],
+                data: [<?php echo $persen_asn; ?>, <?php echo $persen_nonasn; ?>],
+                backgroundColor: ['#90ed7d', '#2b908f']
+            }],
+        },
+        options: {
+            // categoryPercentage: 0.5,
+            layout: {
+                padding: {
+                    top: 50,
+                    bottom: 10,
+                    right: 50,
+                    left: 50
+                }
+            },
+
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    display: true,
+                    labels: {
+                        color: '#1e1e1e',
+                        usePointStyle: true,
+                        padding: 20,
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgb(248, 248, 242, .6)',
+                    borderColor: '#DFD3C3',
+                    borderWidth: 1.5,
+                    bodyFont: {
+                        size: 14,
+                    },
+                    bodyColor: '#1e1e1e',
+                    cornerRadius: 3,
+                    yAlign: 'bottom',
+                    titleColor: '#1e1e1e',
+                    titleFont: {
+                        size: 14,
+                    },
+                    padding: 10,
+                    caretPadding: 8,
+                    caretSize: 0,
+                    callbacks: {
+                        label: function(context) {
+                            return 'Prosentase' + ': ' + context.parsed + '%';
+                        }
+                    }
+                },
+            },
+            maintainAspectRatio: false,
+        }
+    });
+</script>
+<script>
+    //chart 3
+    const pp = document.getElementById('pen').getContext('2d');
+    const pendidikan = new Chart(pp, {
+        type: 'bar',
+        data: {
+            labels: ['Pendidikan'],
+            datasets: [{
+                label: 'SMA/SMK',
+                data: [<?php echo $sma; ?>],
+                backgroundColor: '#e4d354'
+            }, {
+                label: 'Diploma',
+                data: [<?php echo $diploma; ?>],
+                backgroundColor: '#90ed7d'
+            }, {
+                label: 'S1',
+                data: [<?php echo $s1; ?>],
+                backgroundColor: '#7cb5ec'
+            }, {
+                label: 'S2',
+                data: [<?php echo $s2; ?>],
+                backgroundColor: '#f7a35c'
+            }],
+
+        },
+        options: {
+            categoryPercentage: 0.4,
+            layout: {
+                padding: {
+                    top: 50,
+                    bottom: 10,
+                    right: 50,
+                    left: 50
+                }
+            },
+
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    display: true,
+                    labels: {
+                        color: '#1e1e1e',
+                        usePointStyle: true,
+                        padding: 20,
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgb(248, 248, 242, .6)',
+                    borderColor: '#DFD3C3',
+                    borderWidth: 1.5,
+                    bodyFont: {
+                        size: 14,
+                    },
+                    bodyColor: '#1e1e1e',
+                    cornerRadius: 3,
+                    yAlign: 'bottom',
+                    titleColor: '#1e1e1e',
+                    titleFont: {
+                        size: 14,
+                    },
+                    padding: 10,
+                    caretPadding: 8,
+                },
+
+            },
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Jumlah Karyawan',
+                        font: {
+                            size: 16
+                        }
+                    },
+                },
+                x: {
+                    title: {
+                        display: false,
+                        text: 'Jenis Kelamin',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    ticks: {
+                        padding: 5,
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+            },
+            maintainAspectRatio: false,
+        }
+    });
+
+    // PIE
+    const pp1 = document.getElementById('pen1').getContext('2d');
+    const pendidikan1 = new Chart(pp1, {
+        type: 'pie',
+        data: {
+            labels: ['SMA/SMK', 'Diploma', 'S1', 'S2'],
+            datasets: [{
+                label: ['Prosentase'],
+                data: [<?php echo $persen_sma; ?>, <?php echo $persen_diploma; ?>, <?php echo $persen_s1; ?>, <?php echo $persen_s2; ?>],
+                backgroundColor: ['#e4d354', '#90ed7d', '#7cb5ec', '#f7a35c']
+            }],
+        },
+        options: {
+            // categoryPercentage: 0.5,
+            layout: {
+                padding: {
+                    top: 50,
+                    bottom: 10,
+                    right: 50,
+                    left: 50
+                }
+            },
+
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    display: true,
+                    labels: {
+                        color: '#1e1e1e',
+                        usePointStyle: true,
+                        padding: 20,
+                        font: {
+                            size: 14,
+                            weight: 'bold',
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgb(248, 248, 242, .6)',
+                    borderColor: '#DFD3C3',
+                    borderWidth: 1.5,
+                    bodyFont: {
+                        size: 14,
+                    },
+                    bodyColor: '#1e1e1e',
+                    cornerRadius: 3,
+                    yAlign: 'bottom',
+                    titleColor: '#1e1e1e',
+                    titleFont: {
+                        size: 14,
+                    },
+                    padding: 10,
+                    caretPadding: 8,
+                    caretSize: 0,
+                    callbacks: {
+                        label: function(context) {
+                            return 'Prosentase' + ': ' + context.parsed + '%';
+                        }
+                    }
+                },
+            },
+            maintainAspectRatio: false,
+        }
+    });
+</script>
+<script>
+    //button function
+    const chart1 = document.querySelectorAll('.chart-1');
+    const chart2 = document.querySelectorAll('.chart-2');
+    const btnProsentase = document.querySelectorAll('.ct-persen button');
+
+    btnProsentase.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            if (chart1[index].style.display === 'none') {
+                chart1[index].style.display = 'block';
+                chart2[index].style.display = 'none';
+            } else {
+                chart1[index].style.display = 'none';
+                chart2[index].style.display = 'block';
+            }
+            button.classList.toggle('active');
+        });
+    });
+</script>
 
 <?php include('../layout/footer.php'); ?>

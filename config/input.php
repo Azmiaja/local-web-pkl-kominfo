@@ -3,13 +3,12 @@ include './app.php';
 
 $nama = $_POST['nama'];
 $jenis_kelamin = $_POST['jenis-kelamin'];
-$tanggal_lahir = $_POST['tanggal-lahir'];
-$usia = $_POST['usia'];
-$pendidikan = $_POST['pendidikan'];
 $status = $_POST['status'];
+$pendidikan = $_POST['pendidikan'];
+
 // Validasi input
 
-if (empty($nama) || empty($jenis_kelamin) || empty($tanggal_lahir) || empty($usia) || empty($pendidikan) || empty($status)) {
+if (empty($nama) || empty($jenis_kelamin) || empty($status) || empty($pendidikan) ) {
     // Jika ada input yang kosong, tampilkan pesan error
     session_start();
     $_SESSION['error'] = "Semua field harus diisi!";
@@ -21,7 +20,7 @@ if (empty($nama) || empty($jenis_kelamin) || empty($tanggal_lahir) || empty($usi
     if (input($_POST) > 0) {
         // Jika data berhasil disimpan, munculkan alert dengan pesan sukses
         session_start();
-        $_SESSION['success'] = "Data berhasil disimpan!";
+        $_SESSION['success'] = "Data berhasil ditambahkan!";
         header("Location: ../views/input-data.php");
         exit();
     } else {

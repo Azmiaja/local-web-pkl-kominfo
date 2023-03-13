@@ -29,14 +29,14 @@
                 <li><a class="nav-li" href="../views/home.php">Beranda</a></li>
                 <li>
                     <div class="dropdown">
-                        <a class="nav-li" href="#">Statistik
-                            <i class="fa-solid fa-chevron-down"></i>
+                        <a class="nav-li" href="../views/statistics.php">Statistik
+                            <!-- <i class="fa-solid fa-chevron-down"></i> -->
                         </a>
-                        <div class="menu2">
+                        <!-- <div class="menu2">
                             <a href="../views/statistik-usia.php">Usia</a>
                             <a href="../views/statistik-pendidikan.php">Pendidikan</a>
                             <a href="../views/statistik-status.php">Status</a>
-                        </div>
+                        </div> -->
                     </div>
                 </li>
                 <li><a class="nav-li" href="../views/input-data.php">Tambah</a></li>

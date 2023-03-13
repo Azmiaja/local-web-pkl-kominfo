@@ -21,13 +21,12 @@ function input($post)
 
     $nama = $post['nama'];
     $jenis_kelamin = $post['jenis-kelamin'];
-    $tanggal_lahir = $post['tanggal-lahir'];
-    $usia = $post['usia'];
-    $pendidikan = $post['pendidikan'];
     $status = $post['status'];
+    $pendidikan = $post['pendidikan'];
 
-    $query = "INSERT INTO data_pegawai (nama, jenis_kelamin, tanggal_lahir, usia, pendidikan, status)
-    VALUES ('$nama', '$jenis_kelamin', '$tanggal_lahir', '$usia', '$pendidikan', '$status')";
+
+    $query = "INSERT INTO tb_pegawai (nama, jenis_kelamin, status, pendidikan )
+    VALUES ('$nama', '$jenis_kelamin', '$status', '$pendidikan' )";
 
     mysqli_query($conn, $query);
 
@@ -36,40 +35,56 @@ function input($post)
 
 
 // mengedit data
-function selectdata($id) {
+function selectdata($id)
+{
     global $conn;
 
-    $query = "SELECT * FROM data_pegawai WHERE id= '$id'";
+    $query = "SELECT * FROM tb_pegawai WHERE no_id= '$id'";
     $result = mysqli_query($conn, $query);
     return $result;
 }
-function updatedata($data) {
+
+function updatedata($data)
+{
     global $conn;
 
-    $query = "UPDATE data_pegawai SET 
-    nama = '". $data['nama'] ."',
-    jenis_kelamin = '". $data['jenis-kelamin'] ."',
-    tanggal_lahir = '". $data['tanggal-lahir'] ."',
-    usia = '". $data['usia'] ."',
-    pendidikan = '". $data['pendidikan'] ."',
-    status = '". $data['status'] ."'
-    WHERE id= '". $data['id'] ."'";
+    $query = "UPDATE tb_pegawai
+              SET nama = ?,
+                  jenis_kelamin = ?,
+                  status = ?,
+                  pendidikan = ?
+              WHERE no_id = ?";
 
-    $result = mysqli_query($conn, $query);
+    $stmt = mysqli_prepare($conn, $query);
 
-    if (!$result) {
+    if (!$stmt) {
         return 0;
-
-    } else {
-        return 1;
     }
+
+    mysqli_stmt_bind_param(
+        $stmt,
+        "ssssi",
+        $data['nama'],
+        $data['jenis-kelamin'],
+        $data['status'],
+        $data['pendidikan'],
+        $data['id']
+    );
+
+    if (!mysqli_stmt_execute($stmt)) {
+        return 0;
+    }
+
+    return 1;
 }
+
 
 // menghapus data
-function delete($id){
+function delete($id)
+{
     global $conn;
 
-    $query = "DELETE FROM data_pegawai WHERE id= '$id'";
+    $query = "DELETE FROM tb_pegawai WHERE no_id= '$id'";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
@@ -78,5 +93,3 @@ function delete($id){
         return 1;
     }
 }
-
-

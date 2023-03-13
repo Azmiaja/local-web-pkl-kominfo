@@ -10,8 +10,24 @@ $(document).ready(function () {
         ],
         pageLength: 10,
         searching: true,
+        scrollY: '50vh', // menambahkan scroll dengan tinggi 50% dari viewport
+        scrollCollapse: true, // mengaktifkan fitur scrollCollapse untuk menghilangkan space kosong di bawah tabel
+        paging: true, // menampilkan pagination
+        lengthChange: true, // mengaktifkan dropdown untuk mengganti jumlah row yang ditampilkan
+        displayLength: 20, // mengatur nilai awal dropdown length menu
     });
 });
+// mengecek apakah nilai dropdown length menu adalah 50, jika iya maka aktifkan scrollY
+$('#example_length select').on('change', function () {
+    if ($(this).val() == '50') {
+        table.settings()[0].oScroll.sY = '50vh';
+        table.draw();
+    } else {
+        table.settings()[0].oScroll.sY = null;
+        table.draw();
+    }
+});
+
 
 //delete data
 $(document).on('click', '.delete-btn', function () {
