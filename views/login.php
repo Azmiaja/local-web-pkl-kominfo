@@ -57,15 +57,6 @@ unset($_SESSION['error']);
       toggle.classList.replace("fa-eye", "fa-eye-slash");
     }
   });
-
-  // tambahkan event listener untuk kejadian "input" pada elemen input password
-  input.addEventListener("input", () => {
-    if (input.value.length > 0) {
-      toggle.style.display = "block";
-    } else {
-      toggle.style.display = "none";
-    }
-  });
 </script>
 
 </html>
